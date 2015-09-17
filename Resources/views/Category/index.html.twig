@@ -1,0 +1,43 @@
+{% extends '::base.html.twig' %}
+{% block category %}class="active"{% endblock %}
+{% block body -%}
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <a href="{{ path('cms_category_new') }}" class="btn btn-sm btn-success pull-right">Create a new
+                        entry</a>
+
+                    <h2 class="panel-title">Category list</h2>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for entity in entities %}
+                            <tr>
+                                <td><a href="{{ path('cms_category_show', { 'id': entity.id }) }}">{{ entity.id }}</a>
+                                </td>
+                                <td>{{ entity.name }}</td>
+                                <td>
+                                    <a href="{{ path('cms_category_show', { 'id': entity.id }) }}"
+                                       class="btn btn-sm btn-default btn-info">show</a>
+
+                                    <a href="{{ path('cms_category_edit', { 'id': entity.id }) }}"
+                                       class="btn btn-sm btn-default btn-warning">edit</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

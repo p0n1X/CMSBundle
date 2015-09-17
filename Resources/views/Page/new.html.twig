@@ -1,0 +1,20 @@
+{% extends '::base.html.twig' %}
+{% block page %}class="active"{% endblock %}
+{% block pages %}class="active"{% endblock %}
+{% block body -%}
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Page creation</h2>
+                </div>
+                <div class="panel-body">
+                    {{ form(form) }}
+                </div>
+            </div>
+            <a href="{{ path('cms_page') }}" class="btn btn-sm btn-default pull-left">
+                Back to the list
+            </a>
+        </div>
+    </div>
+{% endblock %}

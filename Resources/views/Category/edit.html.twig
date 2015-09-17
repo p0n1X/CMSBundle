@@ -1,0 +1,20 @@
+{% extends '::base.html.twig' %}
+{% block category %}class="active"{% endblock %}
+{% block body -%}
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Category edit</h2>
+                </div>
+                <div class="panel-body">
+                    {{ form(edit_form) }}
+                </div>
+            </div>
+            <a href="{{ path('cms_category') }}" class="btn btn-sm btn-default pull-left">
+                Back to the list
+            </a>
+            <span class=" pull-right">{{ form(delete_form) }}</span>
+        </div>
+    </div>
+{% endblock %}

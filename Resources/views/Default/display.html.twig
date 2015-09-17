@@ -1,0 +1,17 @@
+{% extends '::base.html.twig' %}
+{% block home %}class="active"{% endblock %}
+{% block body %}
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="pull-right"><small>Category: {{ page.category.name }}</small></span>
+                    <h2 class="panel-title">{{ page.title }}</h2>
+                </div>
+                <div class="panel-body">
+                    <p>{{ page.content }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

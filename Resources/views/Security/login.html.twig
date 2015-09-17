@@ -1,0 +1,33 @@
+{% extends '::base.html.twig' %}
+{% block login %}class="active"{% endblock %}
+{% block body %}
+    {% if error %}
+        <div class="alert alert-danger" role="alert">
+            {{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Login panel</h3>
+                </div>
+                <div class="panel-body">
+                    <form action="{{ path('login_check') }}" method="post">
+                        <div class="form-group">
+                            <label for="username" class="control-label">Username:</label>
+                            <input type="text" id="username" name="_username" required="required" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="control-label">Password:</label>
+                            <input type="password" id="password" name="_password" required="required"
+                                   class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary pull-right" type="submit">login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
